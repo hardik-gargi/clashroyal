@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html>
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	   
+	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+.topnav {
+  overflow:hidden;
+  background-color:black;
+  margin:1vh;
+  color:black;
+  border-radius:2vh;
+  transition:1s;
+  text-shadow: 1px 0px 3px blue;
+  
+}
+.topnav a {
+ 
+  float: left;
+  display: block;
+  color:blue;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: bold;
+  transition:1s
+  border-radius:2vh;
+  
+}
+.topnav a:hover
+{
+  background-color:blue;
+  color:black;
+
+  box-shadow:inset 0 0 3vh;
+  transition:1s;
+}
+.topnav a.active 
+{
+  background-color:blue;
+  color:black;
+  border-radius:2vh;
+  transition:2s;
+  box-shadow:inset 0 0 2vh;
+}
+.topnav .icon 
+{
+  display: none;
+  color:grey;
+  border-radius:6vh;
+}
+@media screen and (max-width: 600px)
+{
+  .topnav a:not(:first-child) 
+    {
+      display: none;
+    }
+  .topnav a.icon 
+    {
+     float: right;
+     display: block;
+    }
+}
+@media screen and (max-width: 600px)
+{
+  .topnav.responsive 
+    {
+      position: relative; 
+    }
+  .topnav.responsive .icon 
+    {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+.topnav.responsive a 
+{
+    float: none;
+    display: block;
+    text-align: left;
+}
+.accordion
+{
+  background-color: #000000;
+  color: #0025D7;
+  cursor: pointer;
+  padding: 2.5vh;
+  width: 100%;
+  border: none;
+  text-align:left;
+  outline:none;
+  font-size: 3vh;
+  transition: 1s;
+  border-radius:1vh;
+  box-shadow: inset 0 0 1vh;
+  font-weight: bold;
+  width: 100%;
+  text-shadow:1px 0px 2px blue;
+}
+.active,.accordion:hover {
+  background-color:blue;
+  border-radius: 1vh;
+  text-align:center;
+  box-shadow: inset 0 0 2vh;
+  color: black;
+
+}
+.panel 
+{
+  padding: 0 18px;
+  background-color:black;
+  max-height:0px;
+  height:70vh;
+  overflow:visible;
+  transition: 1s ease-out;
+  border-radius: 2vh;
+  box-shadow: inset 0 0 2vh;
+  color: blue;
+  text-align: center;
+  overflow-y:auto;
+  font-weight: bold;
+
+}
+.panel:hover
+{
+      box-shadow:inset 0 0 100vh;
+      background-color:#004CC5;
+      color:black;
+      font-weight: bold;
+}
+p
+{
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+li
+{
+  float:left;
+  padding-top:4vh;
+  padding-bottom: 4vh;
+  padding: 1vh;
+  width: 20%;
+  list-style-type: none;
+}
+li a 
+{
+  display:block;
+  color: white;
+  text-align:center;
+  padding:11px;
+  background-color:black;
+  text-decoration: none;
+  border-radius: 10px;
+  list-style-type: none;
+  
+}
+li a:hover 
+{
+    background-color:blue;
+    text-align:center;
+    border-radius: 30px;
+    box-shadow: inset 0 0 5vh;
+    transition: 01s;
+    font-style:italic;
+    color:black;
+}
+body
+{
+    color:black;
+    background-image:url('https://i.ibb.co/RpTNcDP/clashroyale.jpg');
+    background-size:100%100%;
+    font-weight: lighter;
+    background-attachment: fixed;
+}
+.image 
+{
+    text-align: center;
+    border-radius: 10vh;
+    box-shadow:inset 0 00 80px;
+}
+.icon
+{
+    list-style-type: none;
+    border-block-start: 1px solid white;
+    border-block-end: 1px solid white;
+    background-color:black;
+    color:blue;
+    border-radius: 5vh;
+    box-shadow: inset 0 0 7vh;
+}
+footer
+{
+    background-color:black;
+    color:white;
+}
+.tutorial
+{
+    text-align: center;
+    border-block-start:  5px solid green;
+    box-shadow:inset 0 0 10vh;
+    border-radius:10vh;
+    border-block-end: 5px solid green;
+    
+}
+.arena11
+{
+    border:2px solid red;
+    text-align: center;
+    color:gold;
+    background-color: #FF005F;
+    border-radius: 5vh;
+}
+.cards
+{
+    border:2px solid red;
+    background-color: #FF005F;
+    color: gold;
+    border-radius: 5vh;
+    
+}
+.container
+{
+    margin:0 auto;
+    width:auto;
+}
+</style>
+</head>
+<body>
+    <div class="container">
+<div class="topnav" id="myTopnav">
+  <a href="navigationmenu.html" class="active">Home</a>
+  <a href="arena.html">Arena</a>
+  <a href="cards.html">Cards</a>
+  <a href="#about">About</a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+<script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>
+
+<h1 style="text-align:center">All About Clash Royal</h1>
+<h1 style="text-align:center">Cards</h1>
+<div style="text-align:center">
+<img src="https://vignette.wikia.nocookie.net/clashroyale/images/f/fa/Cards-0.png/revision/latest/scale-to-width-down/340?cb=20160314194103"height="auto"width="220vh">
+</div>
+
+<button class="accordion">Common Cards</button>
+
+
+<div class="panel">
+           <img src="https://vignette.wikia.nocookie.net/clashroyale/images/b/b7/MinionsCard.png/revision/latest/scale-to-width-down/340?cb=20171212204954" height="auto" width="220vh">
+     <p>------- minions -------<br>
+      "Three fast, unarmored flying attackers. Roses are red, minions are blue, they can fly, and will crush you!"</p>
+<pre>
+ELIXIR COST:3              RARITY:Common
+TYPE:Troop                 ARENA:Training Camp
+RELEASE DATE
+4 January 2016
+</pre>
+      
+     <img src="https://vignette.wikia.nocookie.net/clashroyale/images/a/af/ArchersCard.png/revision/latest/scale-to-width-down/340?cb=20171212203255" height="auto"
+         width="220vh">
+         <p>------- Archers -------<br>
+         "A pair of lightly armored ranged attackers. They'll help you take down ground and air units, but you're on your own with hair coloring advice."</p>
+<pre>
+ELIXIR COST:3              RARITYCommon
+TYPE:Troop                 ARENA:Training Camp
+RELEASE DATE
+4 January 2016
+</pre>
+         
+     <img src="https://vignette.wikia.nocookie.net/clashroyale/images/5/54/KnightCard.png/revision/latest/scale-to-width-down/340?cb=20171212204932" height="auto"
+          width="220vh">
+          <p>
+             ------- Knight -------<br>
+           "A tough melee fighter. The Barbarian's handsome, cultured cousin. Rumor has it that he was knighted based on the sheer awesomeness of his mustache alone."
+          </p>
+<pre>
+ELIXIR COST:3             RARITY:Common
+TYPE:Troop                ARENA:Training Camp
+RELEASE DATE
+4 January 2016
+</pre>
+           <img src="https://vignette.wikia.nocookie.net/clashroyale/images/6/6e/ArrowsCard.png/revision/latest?cb=20171212203258"height="auto" width="220vh">
+           <p>------- Arrows -------<br>
+           "Arrows pepper a large area, damaging all enemies hit. Reduced damage to Crown Towers."</p>
+<pre>
+ELIXIR COST:3            RARITY:Common
+TYPE:Spell               ARENA:Training Camp
+RELEASE DATE
+4 January 2016
+</pre>
+    <img src="https://vignette.wikia.nocookie.net/clashroyale/images/3/37/SpearGoblinsCard.png/revision/latest/scale-to-width-down/340?cb=20171212203658"height="auto"width="220vh">
+    <p>------- Spare Goblins -------<br>
+    "Three unarmored ranged attackers. Who the heck taught these guys to throw spears!?! Who thought that was a good idea?!"</p>
+<pre>
+ELIXIR COST:2             RARITY:Common
+TYPE:Troop                ARENA:Goblin Stadium
+RELEASE DATE
+4 January 2016
+</pre>
+    <img src="https://vignette.wikia.nocookie.net/clashroyale/images/b/bd/GoblinsCard.png/revision/latest/scale-to-width-down/340?cb=20171212204756"height="auto"
+        width="220vh">
+        <p>------- Goblins -------<br>
+        "Three fast, unarmored melee attackers. Small, fast, green and mean!"</p>
+<pre>
+ELIXIR COST:2             RARITY:Common
+TYPE:Troop                ARENA:Goblin Stadium
+RELEASE DATE
+4 January 2016
+</pre>
+     <img src="https://vignette.wikia.nocookie.net/clashroyale/images/2/2b/BomberCard.png/revision/latest/scale-to-width-down/340?cb=20171212203417"height="auto"width="220vh">
+     <p>------- Bomber -------<br>
+     "Small, lightly protected skeleton that throws bombs. Deals area damage that can wipe out a swarm of enemies."</p>
+<pre>
+ELIXIR COST:3            RARITY:Common
+TYPE:Troop               ARENA:Bone Pit
+RELEASE DATE
+4 January 2016
+
+</pre>
+     <img src="https://vignette.wikia.nocookie.net/clashroyale/images/f/f0/SkeletonsCard.png/revision/latest/scale-to-width-down/340?cb=20171212203652"height="auto"width="220vh">
+     <p>------- Skeletons -------<br>
+     "Three fast, very weak melee fighters. Surround your enemies with this pile of bones!"</p>
+<pre>
+ELIXIR COST:1            RARITY:Common
+TYPE:Troop               ARENA:Bone Pit
+RELEASE DATE
+4 January 2016
+</pre>
+      <img src="https://vignette.wikia.nocookie.net/clashroyale/images/7/70/CannonCard.png/revision/latest/scale-to-width-down/340?cb=20171212210523"height="auto"width="220vh">
+      <p>------- Cannon -------<br>
+      "Defensive building. Shoots cannonballs with deadly effect, but cannot target flying troops."</p>
+<pre>
+ELIXIR COST:3            RARITY:Common
+TYPE:Building            ARENA:Barbarian Bowl
+RELEASE DATE
+4 January 2016
+</pre>
+    <img src="https://vignette.wikia.nocookie.net/clashroyale/images/2/2e/BarbariansCard.png/revision/latest/scale-to-width-down/340?cb=20171212210524"height="auto"width="220vh">
+    <p>------- Barbarians -------<br>
+    "A horde of melee attackers with mean mustaches and even meaner tempers."</p>
+<pre>
+ELIXIR COST:5            RARITY:Common
+TYPE:Troop               ARENA:Barbarian Bowl
+RELEASE DATE
+4 January 2016
+</pre>
+    <img src="https://vignette.wikia.nocookie.net/clashroyale/images/5/52/ZapCard.png/revision/latest/scale-to-width-down/340?cb=20171212203728"height="auto"width="220vh">
+    <p>------- Zap -------<br>
+     "Zaps enemies, briefly stunning them and dealing damage inside a small radius. Reduced damage to Crown Towers."</p>
+<pre>
+ELIXIR COST:2            RARITY:Common
+TYPE:Spell               ARENA:P.E.K.K.A.'s Playhouse
+RELEASE DATE
+4 January 2016
+</pre>
+    <img src="https://vignette.wikia.nocookie.net/clashroyale/images/0/09/MinionHordeCard.png/revision/latest/scale-to-width-down/340?cb=20171212204952"width="220vh"height="auto">
+    <p>------- Minion Horde -------<br>
+    "Six fast, unarmored flying attackers. Three's a crowd, six is a horde!"</p>
+<pre>
+ELIXIR COST:5            RARITY:Common
+TYPE:Troop               ARENA:P.E.K.K.A.'s Playhouse
+RELEASE DATE
+4 January 2016
+</pre>
+    <img src="https://vignette.wikia.nocookie.net/clashroyale/images/2/22/BatsCard.png/revision/latest/scale-to-width-down/340?cb=20171212210528" height="auto"width="220vh">
+    <p>------- Bats -------<br>
+    "Spawns a handful of tiny flying creatures. Think of them as sweet, purple... balls of DESTRUCTION!"
+    </p>
+<pre>
+ELIXIR COST:2            RARITY:Common
+TYPE:Troop               ARENA:Spell Valley
+RELEASE DATE
+7 July 2017
+</pre>
+    <img src="https://vignette.wikia.nocookie.net/clashroyale/images/e/e5/FireSpiritsCard.png/revision/latest/scale-to-width-down/340?cb=20171212204727"height="auto"width="220vh">
+    <p>------- Fire Spirits -------<br>
+    "These three Fire Spirits are on a kamikaze mission to give you a warm hug. It'd be adorable if they weren't on fire."</p>
+<pre>
+ELIXIR COST:2            RARITY:Common
+TYPE:Troop               ARENA:Spell Valley
+RELEASE DATE
+3 May 2016
+</pre>
+ <img src="https://vignette.wikia.nocookie.net/clashroyale/images/1/1e/MortarCard.png/revision/latest/scale-to-width-down/340?cb=20191207191730"height="auto"width="220vh">
+     <p>------- Mortar -------<br>
+     "Defensive building with a long range. Shoots big boulders that deal area damage, but cannot hit targets that get very close!"</p>
+<pre>
+ELIXIR COST:4            RARITY:Common
+TYPE:Building            ARENA:Builder's Workshop
+RELEASE DATE
+4 January 2016
+
+</pre>
+    <img src="https://vignette.wikia.nocookie.net/clashroyale/images/8/88/SkeletonBarrelCard.png/revision/latest/scale-to-width-down/340?cb=20171212203650"height="auto"width="220vh">
+    <p>------- Skeleton Barrel -------<br>
+    "It's a Skeleton party in the sky, until all the balloons pop... then it's a Skeleton party on the ground!"</p>
+<pre>
+ELIXIR COST:3            RARITY:Common
+TYPE:Troop               ARENA:Builder's Workshop
+RELEASE DATE
+17 November 2017
+</pre>
+     <img src="https://vignette.wikia.nocookie.net/clashroyale/images/7/77/RoyalRecruitsCard.png/revision/latest/scale-to-width-down/340?cb=20180719221339"height="auto"width="220vh">
+     <p>------- Royal Recruits -------<br>
+     "Deploys a line of recruits armed with spears, shields and wooden buckets. They dream of ponies and one day wearing metal buckets."</p>
+<pre>
+ELIXIR COST:7            RARITY:Common
+TYPE:Troop               ARENA:Royal Arena
+RELEASE DATE
+7 August 2018
+</pre>
+    <img src="https://vignette.wikia.nocookie.net/clashroyale/images/8/8b/RoyalGiantCard.png/revision/latest/scale-to-width-down/340?cb=20171212203645"height="auto"width="220vh">
+    <p>------- Royal Giant -------<br>
+    "Destroying enemy buildings with his massive cannon is his job; making a raggedy blond beard look good is his passion."
+    </p>
+<pre>
+ELIXIR COST:6            RARITY:Common
+TYPE:Troop               ARENA:Royal Arena
+RELEASE DATE
+29 February 2016
+</pre>
+    <img src="https://vignette.wikia.nocookie.net/clashroyale/images/7/7e/GiantSnowballCard.png/revision/latest/scale-to-width-down/340?cb=20180618175737"height="auto"width="220vh">           
+    <p>------- Giant Snowball -------<br>
+    "It’s HUGE! Once it began rolling down Frozen Peak, there was no stopping it. Enemies hit are knocked back and slowed down."</p>
+<pre>
+ELIXIR COST:2            RARITY:Common
+TYPE:Spell               ARENA:Frozen Peak
+RELEASE DATE
+20 June 2018
+</pre>
+    <img src="https://vignette.wikia.nocookie.net/clashroyale/images/2/2c/IceSpiritCard.png/revision/latest/scale-to-width-down/340?cb=20171212204920"height="auto"width="220vh">
+    <p>------- Ice spirit -------<br>
+    "Spawns one lively little Ice Spirit to freeze a group of enemies. Stay frosty."</p>
+<pre>
+ELIXIR COST:1            RARITY:Common
+TYPE:Troop               ARENA:Frozen Peak
+RELEASE DATE
+4 July 2016
+</pre>
+     <img src="https://vignette.wikia.nocookie.net/clashroyale/images/9/9e/RascalsCard.png/revision/latest/scale-to-width-down/340?cb=20180516184359"height="auto"width="220vh">
+     <p>------- Rascals -------<br>
+     "Spawns a mischievous trio of Rascals! The boy takes the lead, while the girls pelt enemies from behind... with slingshots full of Double Trouble Gum!"</p>
+<pre>
+ELIXIR COST:5           RARITY:Common
+TYPE:Troop              ARENA:Jungle Arena
+RELEASE DATE
+25 May 2018
+</pre>
+    <img src="https://vignette.wikia.nocookie.net/clashroyale/images/7/79/GoblinGangCard.png/revision/latest/scale-to-width-down/340?cb=20171212204748"height="auto"width="220vh">
+    <p>------- Goblin Gang -------<br>
+    "Spawns five Goblins - three with knives, two with spears - at a discounted Elixir cost. It's like a Goblin Value Pack!"</p>
+<pre>
+ELIXIR COST:3           RARITY:Common
+TYPE:Troop              ARENA:Jungle Arena
+RELEASE DATE
+24 February 2017
+</pre>
+    <img src="https://vignette.wikia.nocookie.net/clashroyale/images/2/29/FirecrackerCard.png/revision/latest/scale-to-width-down/340?cb=20200113190910"height="auto"width="220vh">
+    <p>------- Fire Cracker -------<br>
+    "Shoots a firework that explodes on impact, damaging the target and showering anything behind it with sparks. This is what happens when Archers get bored!"</p>
+<pre>
+ELIXIR COST:3            RARITY:Common
+TYPE:Troop               ARENA:Hog Mountain
+RELEASE DATE
+3 February 2020
+</pre>
+    
+    <img src="https://vignette.wikia.nocookie.net/clashroyale/images/e/e8/EliteBarbariansCard.png/revision/latest/scale-to-width-down/340?cb=20171212204714"height="auto"width="220vh">
+    <p>------- Elite Barbarians -------<br>
+    "Spawns a pair of leveled up Barbarians. They're like regular Barbarians, only harder, better, faster and stronger."</p>
+<pre>
+ELIXIR COST:6            RARITY:Common
+TYPE:Troop               ARENA:Hog Mountain
+RELEASE DATE
+25 November 2016
+</pre>
+    <img src="https://vignette.wikia.nocookie.net/clashroyale/images/2/27/TeslaCard.png/revision/latest/scale-to-width-down/340?cb=20191207191656"height="auto"width="220vh">
+    <p>------- Tesla -------<br>
+    "Defensive building. Whenever it's not zapping the enemy, the power of Electrickery is best kept grounded."</p>
+<pre>
+ELIXIR COST:4            RARITY:Common
+TYPE:Building            ARENA:Electro Valley
+RELEASE DATE
+4 January 2016
+</pre>
+    <img src="https://vignette.wikia.nocookie.net/clashroyale/images/8/8d/SkeletonDragonsCard.png/revision/latest/scale-to-width-down/284?cb=20200531185819"height="auto"width="220vh">
+    <p>------- Skeleton Dragon -------<br>
+    "This pair of skeletal scorchers deal Area Damage and fly above the Arena. They also play a mean rib cage xylophone duet."</p>
+<pre>
+ELIXIR COST:4            RARITY:Common
+TYPE:Troop               ARENA:Spooky Town
+RELEASE DATE
+6 July 2020
+</pre>
+    <img src="https://vignette.wikia.nocookie.net/clashroyale/images/6/6c/RoyalDeliveryCard.png/revision/latest/scale-to-width-down/340?cb=20200306025958"height="auto"width="220vh">
+    <p>------- Royal Dilivery -------<br>
+    "No need to sign for this package! Dropped from the sky, it damages and knocks back enemy Troops before delivering a Royal Recruit. The empty box is also handy for espionage."</p>
+<pre>
+ELIXIR COST:3            RARITY:Common
+TYPE:Spell               ARENA:Spooky Town
+RELEASE DATE
+6 April 2020
+</pre>
+
+</div>
+
+<button class="accordion">Rare Cards</button>
+<div class="panel">
+       <img src="https://vignette.wikia.nocookie.net/clashroyale/images/f/f4/FireballCard.png/revision/latest/scale-to-width-down/340?cb=20171212204724"height="auto"
+          width="220vh">
+          <p>------- Fireball -------<br>"Annnnnd... Fireball. Incinerates a small area, dealing high damage. Reduced damage to Crown Towers."</p>
+<pre>
+ELIXIR COST:4            RARITY:Rare
+TYPE:Spell               ARENA:Training Camp
+RELEASE DATE
+4 January 2016</pre>
+       
+      <img src="https://vignette.wikia.nocookie.net/clashroyale/images/7/7b/MiniPEKKACard.png/revision/latest/scale-to-width-down/340?cb=20171212204957" height="auto"width="220vh">
+      <p>------- Mini Pekka -------<br>
+      "The Arena is a certified butterfly-free zone. No distractions for P.E.K.K.A, only destruction."</p>
+<pre>
+ELIXIR COST:4            RARITY:Rare
+TYPE:Troop               ARENA:Training Camp
+RELEASE DATE
+4 January 2016
+</pre>
+      <img src="https://vignette.wikia.nocookie.net/clashroyale/images/e/ee/MusketeerCard.png/revision/latest/scale-to-width-down/340?cb=20171212203619"width="220vh"
+              height="auto">
+<p>------- Musketeer -------<br>"Don't be fooled by her delicately coiffed hair, the Musketeer is a mean shot with her trusty boomstick."
+</p>
+<pre>
+ELIXIR COST:4            RARITYY:Rare
+TYPE:Troop               ARENA:Training Camp
+RELEASE DATE
+4 January 2016
+</pre>
+      <img src="https://vignette.wikia.nocookie.net/clashroyale/images/b/b1/GiantCard.png/revision/latest/scale-to-width-down/340?cb=20171212204740"height="auto"
+          width="220vh">
+         <p>------- Giant -------<br>
+         "Slow but durable, only attacks buildings. A real one-man wrecking crew!"
+         </p>
+<pre>
+ELIXIR COST:5           RARITY:Rare
+TYPE:Troop              ARENA:Training Camp
+RELEASE DATE
+4 January 2016
+</pre>
+    <img src="https://vignette.wikia.nocookie.net/clashroyale/images/d/da/GoblinHutCard.png/revision/latest/scale-to-width-down/340?cb=20191215033150"width="220vh"height="auto">
+    <p>------- Goblin Hut -------<br>"Building that spawns Spear Goblins. Don't look inside... You don't want to see how they're made.
+    "</p>
+<pre>
+ELIXIR COST:5          RARITY:Rare
+TYPE:Building          ARENA:Goblin Stadium
+RELEASE DATE
+4 January 2016
+</pre>
+    <img src="https://vignette.wikia.nocookie.net/clashroyale/images/3/30/HogRiderCard.png/revision/latest/scale-to-width-down/340?cb=20171212204811"width="220vh"height="auto">
+    <p>------- Hog Rider -------<br>
+    "Fast melee troop that targets buildings and can jump over the river. He followed the echoing call of "Hog Riderrrrr" all the way through the Arena doors."</p>
+<pre>
+ELIXIR COST:4            RARITY:Rare
+TYPE:Troop               ARENA:Goblin Stadium
+RELEASE DATE
+4 January 2016
+</pre>
+     <img src="https://vignette.wikia.nocookie.net/clashroyale/images/7/75/TombstoneCard.png/revision/latest/scale-to-width-down/340?cb=20171212203710"height="auto"width="220vh">
+     <p>------- Tomb Stone -------<br>
+     "Troop building that periodically deploys Skeletons to fight the enemy... and when destroyed, spawns 3 Skeletons! Creepy."</p>
+<pre>
+ELIXIR COST:3           RARITY:Rare
+TYPE:Building           ARENA:Bone Pit
+RELEASE DATE
+4 January 2016
+</pre>
+       <img src="https://vignette.wikia.nocookie.net/clashroyale/images/e/e2/ValkyrieCard.png/revision/latest/scale-to-width-down/340?cb=20171212203715"width="220vh"height="auto">
+       <p>------- Valkyrie -------<br>
+       "Tough melee fighter, deals area damage around her. Swarm or horde, no problem! She can take them all out with a few spins"</p>
+<pre>
+ELIXIR COST:4            RARITY:Rare
+TYPE:Troop               ARENA:Bone Pit
+RELEASE DATE
+4 January 2016
+</pre>
+    <img src="https://vignette.wikia.nocookie.net/clashroyale/images/6/63/BarbarianHutCard.png/revision/latest/scale-to-width-down/340?cb=20171212203409"height="auto"width="220vh">
+    <p>------- Barbarian Hunt -------<br>
+    "Building that periodically deploys Barbarians to fight the enemy. Time to make the Barbarians!"</p>
+<pre>
+ELIXIR COST:7            RARITY:Rare
+TYPE:Building            ARENA:Barbarian Bowl
+RELEASE DATE
+4 January 2016
+</pre>
+    <img src="https://vignette.wikia.nocookie.net/clashroyale/images/c/ce/BattleRamCard.png/revision/latest/scale-to-width-down/340?cb=20171212210525"width="220vh"height="auto">
+    <p>------- Battle Ram -------<br>
+    "Two Barbarians holding a big log charge at the nearest building, dealing significant damage if they connect; then they go to town with their swords!"</p>
+<pre>
+ELIXIR COST:4            RARITY:Rare
+TYPE:Troop               ARENA:Barbarian Bowl
+RELEASE DATE
+10 February 2017
+</pre>
+    <img src="https://vignette.wikia.nocookie.net/clashroyale/images/3/34/InfernoTowerCard.png/revision/latest/scale-to-width-down/340?cb=20171212204928"height="auto"width="220vh">
+    <p>------- Inferno Tower -------<br>
+    "Defensive building, roasts targets for damage that increases over time. Burns through even the biggest and toughest enemies!"</p>
+<pre>
+ELIXIR COST:5            RARITY:Rare
+TYPE:Building            ARENA:P.E.K.K.A.'s Playhouse
+RELEASE DATE
+4 January 2016
+</pre>
+    <img src="https://vignette.wikia.nocookie.net/clashroyale/images/a/a8/MegaMinionCard.png/revision/latest/scale-to-width-down/340?cb=20171212204946"height="auto"width="220vh">
+    <p>------- Mega Minion -------<br>"Flying, armored and powerful. What could be its weakness?! Cupcakes."</p>
+<pre>
+ELIXIR COST:3            RARITY:Rare
+TYPE:Troop               ARENA:P.E.K.K.A.'s Playhouse
+RELEASE DATE
+19 September 2016
+</pre>
+    <img src="https://vignette.wikia.nocookie.net/clashroyale/images/5/51/FurnaceCard.png/revision/latest/scale-to-width-down/340?cb=20171212204737" height="auto"width="220vh">
+    <p>------- Furnance -------<br>
+    "The Furnace spawns two Fire Spirits at a time. It also makes great brick-oven pancakes."</p>
+<pre>
+ELIXIR COST:4            RARITY:Rare
+TYPE:Building            ARENA:Spell Valley
+RELEASE DATE
+3 May 2016
+</pre>
+    <img src="https://vignette.wikia.nocookie.net/clashroyale/images/4/49/WizardCard.png/revision/latest/scale-to-width-down/340?cb=20171212203722"height="auto"width="220vh">
+    <p>------- Wizard -------<br>
+    "The most awesome man to ever set foot in the arena, the Wizard will blow you away with his handsomeness... and/or fireballs."</p>
+<pre>
+ELIXIR COST:5            RARITY:Rare
+TYPE:Troop               ARENA:Spell Valley
+RELEASE DATE
+4 January 2016
+</pre>
+    <img src="https://vignette.wikia.nocookie.net/clashroyale/images/f/fc/RocketCard.png/revision/latest/scale-to-width-down/340?cb=20171212203640"height="auto"width="220vh">
+    <p>------- Rocket -------<br>
+    "Deals high damage to a small area. Looks really awesome doing it. Reduced damage to Crown Towers."</p>
+<pre>
+ELIXIR COST:6            RARITY:Rare
+TYPE:Spell               ARENA:Builder's Workshop
+RELEASE DATE
+4 January 2016       
+</pre>
+    <img src="https://vignette.wikia.nocookie.net/clashroyale/images/3/31/FlyingMachineCard.png/revision/latest/scale-to-width-down/340?cb=20171212204730"height="auto"width="220vh">
+    <p>------- Flying Machine -------<br>
+    
+The Master Builder has sent his first contraption to the Arena! It's a fast and fun flying machine, but fragile!</p>
+<pre>
+ELIXIR COST:4            RARITY:Rare
+TYPE:Troop               ARENA:Builder's Workshop
+RELEASE DATE
+6 October 2017
+</pre>
+    <img src="https://vignette.wikia.nocookie.net/clashroyale/images/5/51/RoyalHogsCard.png/revision/latest/scale-to-width-down/340?cb=20180618175738"height="auto"width="220vh">
+    <p>------- Royal Hog -------<br>
+    "The King’s personal pets are loose! They love to chomp on apples and towers alike - who let the hogs out?!"</p>
+<pre>
+ELIXIR COST:5            RARITY:Rare
+TYPE:Troop               ARENA:Royal Arena
+RELEASE DATE
+20 June 2018
+
+</pre>
+    <img src="https://vignette.wikia.nocookie.net/clashroyale/images/c/c9/ThreeMusketeersCard.png/revision/latest/scale-to-width-down/340?cb=20171212203707"height="auto"width="220vh">
+    <p>------- Three Musketeer -------<br>
+   "Trio of powerful, independent markswomen, fighting for justice and honor. Disrespecting them would not be just a mistake, it would be a cardinal sin!"</p>
+<pre>
+ELIXIR COST:9           RARITY:Rare
+TYPE:Troop              ARENA:Royal Arena
+RELEASE DATE
+29 February 2016
+</pre>
+    <img src="https://vignette.wikia.nocookie.net/clashroyale/images/3/33/ElixirCollectorCard.png/revision/latest/scale-to-width-down/340?cb=20171212204717"height="auto"width="220vh">
+    <p>------- Elixir Collector -------<br>
+    "You gotta spend Elixir to make Elixir! This building makes 8 Elixir over its Lifetime. Does not appear in your starting hand."</p>
+<pre>
+ELIXIR COST:6           RARITY:Rare
+TYPE:Building           ARENA:Frozen Peak
+RELEASE DATE
+4 January 2016
+</pre>
+    <img src="https://vignette.wikia.nocookie.net/clashroyale/images/5/5f/IceGolemCard.png/revision/latest/scale-to-width-down/340?cb=20171212210529"height="auto"width="220vh">
+<p>------- Ice Golem -------<br>
+"He's tough, targets buildings and explodes when destroyed, slowing nearby enemies. Made entirely out of ice... or is he?! Yes."</p>
+<pre>
+ELIXIR COST:2           RARITY:Rare
+TYPE:Troop              ARENA:Frozen Peak
+RELEASE DATE
+14 October 2016
+</pre>
+    <img src="https://vignette.wikia.nocookie.net/clashroyale/images/6/64/EarthquakeCard.png/revision/latest/scale-to-width-down/284?cb=20190416153355"height="auto"width="220vh">
+    <p>------- Earthquake -------<br>
+    "Deals Damage per second to Troops and Crown Towers. Deals huge Building Damage! Does not affect flying units (it is an EARTHquake, after all)."</p>
+<pre>
+ELIXIR COST:3            RARITY:Rare
+TYPE:Spell               ARENA:Jungle Arena
+RELEASE DATE
+15 April 2019
+
+
+</pre>
+    <img src="https://vignette.wikia.nocookie.net/clashroyale/images/7/70/DartGoblinCard.png/revision/latest/scale-to-width-down/340?cb=20171212203434"height="auto"width="220vh">
+      <p>------- Dart Goblin -------<br>
+      "Runs fast, shoots far and chews gum. How does he blow darts with a mouth full of Double Trouble gum? Years of didgeridoo lessons."</p>
+<pre>
+ELIXIR COST:3            RARITY:Rare   
+TYPE:Troop               ARENA:Jungle Arena
+RELEASE DATE
+13 January 2017
+</pre>
+    <img src="https://vignette.wikia.nocookie.net/clashroyale/images/6/63/HealSpiritCard.png/revision/latest/scale-to-width-down/340?cb=20200405172059"height="auto"width="220vh">
+    <p>------- Heal Spirit -------<br>
+    "A mischevious Spirit that leaps at enemies, dealing Damage and leaving behind a powerful healing effect that restores Hitpoints to friendly Troops!"</p>
+<pre>
+ELIXIR COST:1           RARITY:Rare
+TYPE:Troop              ARENA:Hog Mountain
+RELEASE DATE
+2 April 2020
+</pre>
+    <img src="https://vignette.wikia.nocookie.net/clashroyale/images/f/f1/BombTowerCard.png/revision/latest/scale-to-width-down/340?cb=20171212210521"height="auto"width="220vh">
+    <p>------- Bomb Tower -------<br>"Defensive building that houses a Bomber. Deals area damage to anything dumb enough to stand near it."</p>
+<pre>
+ELIXIR COST:4             RARITY:Rare
+TYPE:Building             ARENA:Hog Mountain
+RELEASE DATE
+4 January 2016
+</pre>
+    <img src="https://vignette.wikia.nocookie.net/clashroyale/images/5/5a/ElixirGolemCard.png/revision/latest/scale-to-width-down/340?cb=20191007151830"height="auto"width="220vh">
+    <p>------- Elixir Golem -------<br>
+    "Splits into two Elixir Golemites when destroyed, which split into two sentient Blobs when defeated. A Blob gives your opponent 1 Elixir when destroyed!"</p>
+<pre>
+ELIXIR COST:3             RARITY:Rare
+TYPE:Troop                ARENA:Electro Valley
+RELEASE DATE
+4 November 2019
+
+</pre>
+    <img src="https://vignette.wikia.nocookie.net/clashroyale/images/5/5b/ZappiesCard.png/revision/latest/scale-to-width-down/340?cb=20180125224858"height="auto"width="220vh">
+    <p>------- Zappies -------<br>
+    "Spawns a pack of miniature Zap machines. Who controls them...? Only the Master Builder knows."</p>
+<pre>
+ELIXIR COST:4              RARITY:Rare
+TYPE:Troop                 ARENA:Electro Valley
+RELEASE DATE
+12 December 2017
+</pre>
+    <img src="https://vignette.wikia.nocookie.net/clashroyale/images/1/17/GoblinCageCard.png/revision/latest/scale-to-width-down/340?cb=20190519202649"height="auto"width="220vh">
+    <p>------- Goblin Cage -------<br>
+    "When the Goblin Cage is destroyed, a Goblin Brawler is unleashed into the Arena! Goblin Brawler always skips leg day."</p>
+<pre>
+ELIXIR COST:4              RARITY:Rare
+TYPE:Building              ARENA:Spooky Town
+RELEASE DATE
+17 May 2019
+
+</pre>
+    <img src="https://vignette.wikia.nocookie.net/clashroyale/images/9/93/BattleHealerCard.png/revision/latest/scale-to-width-down/340?cb=20191205172851"height="auto"width="220vh">
+    <p>------- Battle Healer -------<br>
+    "With each attack, she unleashes a powerful healing aura that restores Hitpoints to herself and friendly Troops. When she isn't attacking, she passively heals herself!"</p>
+<pre>
+ELIXIR COST:4             RARITY:Rare
+TYPE:Troop                ARENA:Spooky Town
+RELEASE DATE
+6 January 2020
+
+</pre>
+</div>
+
+<button class="accordion">Epic Cards</button>
+<div class="panel">
+  <img src="https://vignette.wikia.nocookie.net/clashroyale/images/3/35/BabyDragonCard.png/revision/latest?cb=20171212203300"height="auto" width="220vh">
+  <p>------- baby dragon -------<br>
+ "Burps fireballs from the sky that deal area damage. Baby dragons hatch cute, hungry and ready for a barbeque."</p>
+ <pre> 
+ELIXIR COST:4            RARITY:Epic
+TYPE:Troop               ARENA:Training Camp
+RELEASE DATE
+4 January 2016</pre>
+  
+</div>
+<button class="accordion">Legendery Cards</button>
+<div class="panel">
+    
+</div>
+
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight) {
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    } 
+  });
+}
+</script>
+<h2>download link for android</h2>
+      <img src="https://i.ibb.co/D172W15/playstore.jpg"
+      width="120vh"
+      height="80vh"
+        target="_top"
+        alt="playstore link"
+        usemap="#playstore"/>
+        <map name="playstore">
+        <area shape="rect"
+           coords="5,0,508,188"
+           alt="asia"
+           <a href="https://play.google.com/store/apps/details?id=com.supercell.clashroyale"> </a>
+          </map>
+<h2>download link for ios </h2>
+        <img src ="https://i.ibb.co/3WzJvJ2/ios.png"
+        height="80vh"
+        width="120vh"
+        target="_top"
+        alt="ios link"
+        usemap="#ios"/>
+        <map name="ios">
+        <area shape="rect"
+            coords="5,0,508,188"
+            <a href="https://apps.apple.com/us/app/clash-royale/id1053012308"></a>
+            
+           </map>
+           <br>
+           <br>
+       
+
+              <div class="icon">
+                  
+<h2 style="text-align:center">its all about clash royale</h2>
+<pre>
+ follow us.                     goodmorning
+                  hello
+
+                  hdhdh
+
+ hshshshs.                      hshshshshsh
+</pre>
+</div>
+
+<h2>follow us on</h2>
+<footer>
+  <li><a href="https://www.facebook.com/hardik.gargi.7"><i class="fa fa-facebook"></i></a></li>
+  <li><a href="https://www.instagram.com/hardikgargi/feed/"><i class="fa fa-instagram"></i></a></li>
+  <li><a href=""><i class="fa fa-twitter"></i></a></li>
+  
+  <li><a href="https://www.linkedin.com/in/hardik-gargi-688a65194"><i class="fa fa-linkedin"></i></a></li>
+  </div>
+  </footer>
+  </div>
+
+  </body>
+  
+  
+  </html>
+  
+
